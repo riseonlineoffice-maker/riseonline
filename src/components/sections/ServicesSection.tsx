@@ -1,4 +1,4 @@
-import { Video, Globe, Smartphone, Image } from "lucide-react";
+import { Video, Users, Smartphone, Image } from "lucide-react";
 
 const services = [
   {
@@ -7,7 +7,7 @@ const services = [
     description: "Reels, Shorts, Long-form & Cinematic content that captivates audiences",
   },
   {
-    icon: Globe,
+    icon: Users,
     title: "Social Media Management",
     description: "Strategy, scheduling & growth tactics to build your online presence",
   },
