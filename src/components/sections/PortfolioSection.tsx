@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Play, X } from "lucide-react";
 
 const portfolioItems = [
-  { id: 1, title: "Brand Story Film", category: "Cinematic", videoUrl: "" },
+  { id: 1, title: "Brand Story Film", category: "Cinematic", videoUrl: "https://drive.google.com/file/d/1DkW-b8tU7FYJ8Qq4lAzPRq9SScpOQhol/preview" },
   { id: 2, title: "Product Launch Reel", category: "Reels", videoUrl: "" },
   { id: 3, title: "YouTube Documentary", category: "Long-form", videoUrl: "" },
   { id: 4, title: "Instagram Campaign", category: "Shorts", videoUrl: "" },
@@ -104,13 +104,22 @@ const PortfolioSection = () => {
               <X className="w-5 h-5" />
             </button>
 
-            {/* Video placeholder */}
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-luxury-soft to-luxury-black">
-              <div className="text-center">
-                <Play className="w-16 h-16 text-gold mx-auto mb-4" />
-                <p className="text-muted-foreground">Video preview coming soon</p>
+            {/* Video embed or placeholder */}
+            {portfolioItems.find(item => item.id === selectedVideo)?.videoUrl ? (
+              <iframe
+                src={portfolioItems.find(item => item.id === selectedVideo)?.videoUrl}
+                className="absolute inset-0 w-full h-full"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-luxury-soft to-luxury-black">
+                <div className="text-center">
+                  <Play className="w-16 h-16 text-gold mx-auto mb-4" />
+                  <p className="text-muted-foreground">Video preview coming soon</p>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       )}
