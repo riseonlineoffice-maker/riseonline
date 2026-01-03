@@ -8,8 +8,8 @@ const services = [
   },
   {
     icon: Globe,
-    title: "Website Development",
-    description: "Portfolio, Business & Landing pages built to convert visitors",
+    title: "Social Media Management",
+    description: "Strategy, scheduling & growth tactics to build your online presence",
   },
   {
     icon: Smartphone,
