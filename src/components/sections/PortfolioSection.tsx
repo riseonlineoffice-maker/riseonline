@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Play, X } from "lucide-react";
 
 const portfolioItems = [
-  { id: 1, title: "Brand Story Film", category: "Cinematic", videoUrl: "https://drive.google.com/file/d/1DkW-b8tU7FYJ8Qq4lAzPRq9SScpOQhol/preview" },
+  { id: 1, title: "Faceless", category: "Motion graphics", videoUrl: "https://drive.google.com/file/d/1DkW-b8tU7FYJ8Qq4lAzPRq9SScpOQhol/preview" },
   { id: 2, title: "Product Launch Reel", category: "Reels", videoUrl: "" },
   { id: 3, title: "YouTube Documentary", category: "Long-form", videoUrl: "" },
   { id: 4, title: "Instagram Campaign", category: "Shorts", videoUrl: "" },
