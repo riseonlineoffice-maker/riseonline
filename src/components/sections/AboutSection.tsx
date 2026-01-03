@@ -23,7 +23,7 @@ const AboutSection = () => {
             <p>
               Rise Online is a premium creative agency specializing in{" "}
               <span className="text-foreground font-medium">cinematic video editing</span> and{" "}
-              <span className="text-foreground font-medium">high-converting website development</span>. 
+              <span className="text-foreground font-medium">strategic social media management</span>. 
               We partner with ambitious creators, growing brands, innovative startups, and established businesses 
               to craft visual experiences that command attention.
             </p>

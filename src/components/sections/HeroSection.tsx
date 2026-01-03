@@ -50,14 +50,14 @@ const HeroSection = () => {
         {/* Main Headline */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 animate-fade-up delay-100">
           <span className="text-foreground">Premium Video Editing & </span>
-          <span className="text-gradient-gold">Website Development</span>
+          <span className="text-gradient-gold">Social Media Management</span>
           <span className="text-foreground"> for Brands That Want to </span>
           <span className="text-gradient-gold">Stand Out</span>
         </h1>
 
         {/* Subheadline */}
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 animate-fade-up delay-200">
-          We help creators and businesses grow with cinematic edits and high-converting websites.
+          We help creators and businesses grow with cinematic edits and strategic social media management.
         </p>
 
         {/* CTA Buttons */}

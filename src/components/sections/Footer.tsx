@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold text-gradient-gold mb-4">Rise Online</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Premium video editing and website development agency helping brands create 
+              Premium video editing and social media management agency helping brands create 
               impactful visual experiences.
             </p>
           </div>
@@ -20,7 +20,7 @@ const Footer = () => {
           <div>
             <h4 className="text-foreground font-semibold mb-4 uppercase text-sm tracking-wider">Services</h4>
             <ul className="space-y-2">
-              {["Video Editing", "Website Development", "Social Media Content", "Thumbnails & Branding"].map((service) => (
+              {["Video Editing", "Social Media Management", "Social Media Content", "Thumbnails & Branding"].map((service) => (
                 <li key={service}>
                   <a 
                     href="#services" 
