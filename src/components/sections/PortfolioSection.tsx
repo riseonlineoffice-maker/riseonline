@@ -4,7 +4,7 @@ import { Play, X } from "lucide-react";
 const portfolioItems = [
   { id: 1, title: "Faceless", category: "Motion graphics", videoUrl: "https://drive.google.com/file/d/1DkW-b8tU7FYJ8Qq4lAzPRq9SScpOQhol/preview" },
   { id: 2, title: "Talking head", category: "Reels", videoUrl: "https://drive.google.com/file/d/17-aJYSCub6EGb3tEHRU473mF5LxJD-04/preview" },
-  { id: 3, title: "YouTube Documentary", category: "Long-form", videoUrl: "" },
+  { id: 3, title: "YouTube Documentary", category: "Long-form", videoUrl: "https://drive.google.com/file/d/1DmskCChms7f6HdSX8nSsyGzOCC5DoAxN/preview" },
   { id: 4, title: "Instagram Campaign", category: "Shorts", videoUrl: "" },
   { id: 5, title: "Startup Website Promo", category: "Website Promo", videoUrl: "" },
   { id: 6, title: "Fashion Brand Edit", category: "Cinematic", videoUrl: "" },
