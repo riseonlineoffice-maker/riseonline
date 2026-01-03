@@ -9,7 +9,7 @@ const testimonials = [
   {
     name: "Priya Kapoor",
     role: "Startup Founder",
-    content: "They built us a stunning website that perfectly captures our brand essence. Professional, responsive, and truly understand what premium means.",
+    content: "Their social media management transformed our online presence completely. Our engagement tripled and we gained thousands of quality followers in just months.",
   },
   {
     name: "Arjun Mehta",
