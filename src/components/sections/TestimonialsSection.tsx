@@ -24,12 +24,12 @@ const TestimonialsSection = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="text-gold text-sm tracking-[0.3em] uppercase font-medium mb-4 block">
+          <span className="text-cyan text-sm tracking-[0.3em] uppercase font-medium mb-4 block font-body">
             Testimonials
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading">
             <span className="text-foreground">What Clients </span>
-            <span className="text-gradient-gold">Say</span>
+            <span className="text-gradient-cyan">Say</span>
           </h2>
         </div>
 
@@ -38,25 +38,25 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="p-8 bg-card border border-gold/20 rounded-lg 
-                         hover:border-gold/40 hover:gold-border-glow transition-all duration-500"
+              className="p-8 bg-card border border-cyan/20 rounded-lg 
+                         hover:border-cyan/40 hover:cyan-border-glow transition-all duration-500"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-gold fill-gold" />
+                  <Star key={i} className="w-5 h-5 text-cyan fill-cyan" />
                 ))}
               </div>
 
               {/* Content */}
-              <p className="text-muted-foreground leading-relaxed mb-6 italic">
+              <p className="text-muted-foreground leading-relaxed mb-6 italic font-body">
                 "{testimonial.content}"
               </p>
 
               {/* Author */}
               <div>
-                <div className="font-semibold text-foreground">{testimonial.name}</div>
-                <div className="text-sm text-gold">{testimonial.role}</div>
+                <div className="font-semibold text-foreground font-body">{testimonial.name}</div>
+                <div className="text-sm text-cyan font-body">{testimonial.role}</div>
               </div>
             </div>
           ))}
