@@ -10,7 +10,7 @@ const portfolioItems = [
   { id: 6, title: "Fashion Brand Edit", category: "Cinematic", videoUrl: "" },
   { id: 7, title: "Tech Review Montage", category: "Long-form", videoUrl: "" },
   { id: 8, title: "SPEED RAMP", category: "Reels", videoUrl: "https://drive.google.com/file/d/1X_Ti2h7FkRqEBskExY9pXCumX5Pbf4cQ/preview" },
-  { id: 9, title: "Music Video Edit", category: "Cinematic", videoUrl: "" },
+  { id: 9, title: "SOUND DESIGN", category: "Cinematic", videoUrl: "https://drive.google.com/file/d/1n2MZE1ZXoNA0u-C4aa2WoAPq24hX_vPI/preview" },
 ];
 
 const PortfolioSection = () => {
