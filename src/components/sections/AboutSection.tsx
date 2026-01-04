@@ -2,24 +2,24 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-24 md:py-32 bg-gradient-cinematic relative">
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/3 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-0 w-64 h-64 bg-cyan/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan/3 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Section Label */}
-          <span className="text-gold text-sm tracking-[0.3em] uppercase font-medium mb-4 block">
+          <span className="text-cyan text-sm tracking-[0.3em] uppercase font-medium mb-4 block font-body">
             About Us
           </span>
 
           {/* Main Heading */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading mb-8">
             <span className="text-foreground">We Are </span>
-            <span className="text-gradient-gold">Rise Online</span>
+            <span className="text-gradient-cyan">Rise Online</span>
           </h2>
 
           {/* Description */}
-          <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+          <div className="space-y-6 text-lg text-muted-foreground leading-relaxed font-body">
             <p>
               Rise Online is a premium creative agency specializing in{" "}
               <span className="text-foreground font-medium">cinematic video editing</span> and{" "}
@@ -48,12 +48,12 @@ const AboutSection = () => {
             ].map((stat, index) => (
               <div 
                 key={index} 
-                className="text-center p-6 border border-gold/20 rounded-lg bg-card/50 hover:border-gold/40 transition-colors duration-300"
+                className="text-center p-6 border border-cyan/20 rounded-lg bg-card/50 hover:border-cyan/40 transition-colors duration-300"
               >
-                <div className="text-3xl md:text-4xl font-bold text-gradient-gold mb-2">
+                <div className="text-3xl md:text-4xl font-heading text-gradient-cyan mb-2">
                   {stat.number}
                 </div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wider">
+                <div className="text-sm text-muted-foreground uppercase tracking-wider font-body">
                   {stat.label}
                 </div>
               </div>
@@ -63,7 +63,7 @@ const AboutSection = () => {
       </div>
 
       {/* Bottom border */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan/20 to-transparent" />
     </section>
   );
 };
