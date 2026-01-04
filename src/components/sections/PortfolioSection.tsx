@@ -9,7 +9,7 @@ const portfolioItems = [
   { id: 5, title: "MINECRAFT", category: "Gaming", videoUrl: "https://drive.google.com/file/d/1Kbnz81XTr_Y7xAylKLzwk5sQ5d3tawQ8/preview" },
   { id: 6, title: "Fashion Brand Edit", category: "Cinematic", videoUrl: "" },
   { id: 7, title: "Tech Review Montage", category: "Long-form", videoUrl: "" },
-  { id: 8, title: "Event Highlights", category: "Reels", videoUrl: "" },
+  { id: 8, title: "SPEED RAMP", category: "Reels", videoUrl: "https://drive.google.com/file/d/1X_Ti2h7FkRqEBskExY9pXCumX5Pbf4cQ/preview" },
   { id: 9, title: "Music Video Edit", category: "Cinematic", videoUrl: "" },
 ];
 
