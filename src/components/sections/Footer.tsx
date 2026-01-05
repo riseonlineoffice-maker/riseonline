@@ -44,7 +44,7 @@ const Footer = () => {
               {[
                 { Icon: Twitter, href: "https://x.com/_RiseOnline_" },
                 { Icon: Instagram, href: "https://www.instagram.com/riseonlineagency?igsh=aHBkaTAwM25mMXo2" },
-                { Icon: Linkedin, href: "#" }
+                { Icon: Linkedin, href: "https://www.linkedin.com/in/rise-online-a59631379?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" }
               ].map(({ Icon, href }, index) => (
                 <a key={index} href={href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center border border-cyan/30 rounded-lg
                              text-cyan hover:bg-cyan/10 hover:border-cyan/60 transition-all duration-300">
