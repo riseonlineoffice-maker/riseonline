@@ -1,10 +1,7 @@
 import { Mail, Phone, Instagram, Youtube, Linkedin } from "lucide-react";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="py-16 bg-luxury-pure border-t border-cyan/20">
+  return <footer className="py-16 bg-luxury-pure border-t border-cyan/20">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
@@ -20,16 +17,11 @@ const Footer = () => {
           <div>
             <h4 className="text-foreground font-semibold mb-4 uppercase text-sm tracking-wider font-body">Services</h4>
             <ul className="space-y-2">
-              {["Video Editing", "Social Media Management", "Social Media Content", "Thumbnails & Branding"].map((service) => (
-                <li key={service}>
-                  <a 
-                    href="#services" 
-                    className="text-muted-foreground hover:text-cyan transition-colors duration-300 text-sm font-body"
-                  >
+              {["Video Editing", "Social Media Management", "Social Media Content", "Thumbnails & Branding"].map(service => <li key={service}>
+                  <a href="#services" className="text-muted-foreground hover:text-cyan transition-colors duration-300 text-sm font-body">
                     {service}
                   </a>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -37,19 +29,11 @@ const Footer = () => {
           <div>
             <h4 className="text-foreground font-semibold mb-4 uppercase text-sm tracking-wider font-body">Contact</h4>
             <div className="space-y-3">
-              <a 
-                href="https://wa.me/918188938018" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-muted-foreground hover:text-cyan transition-colors duration-300 text-sm font-body"
-              >
+              <a href="https://wa.me/918188938018" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-muted-foreground hover:text-cyan transition-colors duration-300 text-sm font-body">
                 <Phone className="w-4 h-4 text-cyan" />
                 +91 8188938018
               </a>
-              <a 
-                href="mailto:riseonlineediting@gmail.com"
-                className="flex items-center gap-3 text-muted-foreground hover:text-cyan transition-colors duration-300 text-sm font-body"
-              >
+              <a href="mailto:riseonlineediting@gmail.com" className="flex items-center gap-3 text-muted-foreground hover:text-cyan transition-colors duration-300 text-sm font-body">
                 <Mail className="w-4 h-4 text-cyan" />
                 riseonlineediting@gmail.com
               </a>
@@ -57,16 +41,10 @@ const Footer = () => {
 
             {/* Social Icons */}
             <div className="flex gap-3 mt-6">
-              {[Instagram, Youtube, Linkedin].map((Icon, index) => (
-                <a 
-                  key={index}
-                  href="#" 
-                  className="w-10 h-10 flex items-center justify-center border border-cyan/30 rounded-lg
-                             text-cyan hover:bg-cyan/10 hover:border-cyan/60 transition-all duration-300"
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
+              {[Instagram, Youtube, Linkedin].map((Icon, index) => <a key={index} href="#" className="w-10 h-10 flex items-center justify-center border border-cyan/30 rounded-lg
+                             text-cyan hover:bg-cyan/10 hover:border-cyan/60 transition-all duration-300">
+                  <Instagram className="w-4 h-4" />
+                </a>)}
             </div>
           </div>
         </div>
@@ -81,8 +59,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
