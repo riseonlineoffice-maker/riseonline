@@ -8,7 +8,7 @@ const portfolioItems = [
   { id: 4, title: "Real Estate", category: "Shorts", videoUrl: "https://drive.google.com/file/d/1k596VCxPNscZOX_7j38FYH63qz51iK5-/preview" },
   { id: 5, title: "MINECRAFT", category: "Gaming", videoUrl: "https://drive.google.com/file/d/1Kbnz81XTr_Y7xAylKLzwk5sQ5d3tawQ8/preview" },
   { id: 6, title: "GAMEPLAY", category: "Gaming", videoUrl: "https://drive.google.com/file/d/1It4Aftr_slOCFAakT3HhvQb9KCTvwW_4/preview" },
-  { id: 7, title: "Tech Review Montage", category: "Long-form", videoUrl: "" },
+  { id: 7, title: "VLOG", category: "Long-form", videoUrl: "https://drive.google.com/file/d/1Dum-Nba9xg4gSLB0IOyEq-rGlRQbEo9f/preview" },
   { id: 8, title: "SPEED RAMP", category: "Reels", videoUrl: "https://drive.google.com/file/d/1X_Ti2h7FkRqEBskExY9pXCumX5Pbf4cQ/preview" },
   { id: 9, title: "SOUND DESIGN", category: "Cinematic", videoUrl: "https://drive.google.com/file/d/1n2MZE1ZXoNA0u-C4aa2WoAPq24hX_vPI/preview" },
 ];
