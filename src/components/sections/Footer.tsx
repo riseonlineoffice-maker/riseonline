@@ -1,4 +1,4 @@
-import { Mail, Phone, Instagram, Youtube, Linkedin } from "lucide-react";
+import { Mail, Phone, Instagram, Youtube, Linkedin, Twitter } from "lucide-react";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return <footer className="py-16 bg-luxury-pure border-t border-cyan/20">
@@ -41,10 +41,17 @@ const Footer = () => {
 
             {/* Social Icons */}
             <div className="flex gap-3 mt-6">
-              {[Instagram, Youtube, Linkedin].map((Icon, index) => <a key={index} href="#" className="w-10 h-10 flex items-center justify-center border border-cyan/30 rounded-lg
+              {[
+                { Icon: Instagram, href: "#" },
+                { Icon: Youtube, href: "#" },
+                { Icon: Linkedin, href: "#" },
+                { Icon: Twitter, href: "https://x.com/_RiseOnline_" }
+              ].map(({ Icon, href }, index) => (
+                <a key={index} href={href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center border border-cyan/30 rounded-lg
                              text-cyan hover:bg-cyan/10 hover:border-cyan/60 transition-all duration-300">
-                  <Instagram className="w-4 h-4" />
-                </a>)}
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
