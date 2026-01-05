@@ -43,7 +43,7 @@ const Footer = () => {
             <div className="flex gap-3 mt-6">
               {[
                 { Icon: Twitter, href: "https://x.com/_RiseOnline_" },
-                { Icon: Instagram, href: "#" },
+                { Icon: Instagram, href: "https://www.instagram.com/riseonlineagency?igsh=aHBkaTAwM25mMXo2" },
                 { Icon: Linkedin, href: "#" }
               ].map(({ Icon, href }, index) => (
                 <a key={index} href={href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center border border-cyan/30 rounded-lg
