@@ -18,13 +18,11 @@ const longFormEdits = [
 
 type PortfolioItem = { id: number; title: string; videoUrl: string };
 
-const VideoCard = ({ item, onClick, index }: { item: PortfolioItem; onClick: () => void; index: number }) => (
+const VideoCard = ({ item, onClick, index, aspectRatio = "9/16" }: { item: PortfolioItem; onClick: () => void; index: number; aspectRatio?: string }) => (
   <div
     onClick={onClick}
-    className="group relative aspect-[9/16] bg-card rounded-lg overflow-hidden cursor-pointer
-               border border-cyan/10 hover:border-cyan/40 transition-all duration-500
-               hover:shadow-[0_0_30px_hsl(var(--cyan)/0.15)]"
-    style={{ animationDelay: `${index * 80}ms` }}
+    className="group relative bg-card rounded-lg overflow-hidden cursor-pointer border border-cyan/10 hover:border-cyan/40 transition-all duration-500 hover:shadow-[0_0_30px_hsl(var(--cyan)/0.15)]"
+    style={{ animationDelay: `${index * 80}ms`, aspectRatio }}
   >
     <div className="absolute inset-0 bg-gradient-to-br from-luxury-soft/80 to-luxury-black" />
 
@@ -121,7 +119,7 @@ const PortfolioSection = () => {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {longFormEdits.map((item, i) => (
-                  <VideoCard key={item.id} item={item} index={i} onClick={() => setSelectedVideo(item.videoUrl)} />
+                  <VideoCard key={item.id} item={item} index={i} aspectRatio="16/9" onClick={() => setSelectedVideo(item.videoUrl)} />
                 ))}
               </div>
             </>
