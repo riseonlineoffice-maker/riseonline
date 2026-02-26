@@ -38,13 +38,6 @@ const VideoCard = ({ item, onClick, index }: { item: PortfolioItem; onClick: () 
       <h3 className="text-foreground font-heading text-lg tracking-wider">{item.title}</h3>
     </div>
 
-    {/* Play overlay */}
-    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-400">
-      <div className="w-14 h-14 flex items-center justify-center rounded-full bg-cyan/15 border border-cyan/60
-                      group-hover:scale-110 group-hover:bg-cyan/25 transition-all duration-400 backdrop-blur-sm">
-        <Play className="w-5 h-5 text-cyan fill-cyan ml-0.5" />
-      </div>
-    </div>
   </div>
 );
 
