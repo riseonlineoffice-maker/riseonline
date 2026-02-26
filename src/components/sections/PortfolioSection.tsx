@@ -21,7 +21,7 @@ type PortfolioItem = { id: number; title: string; videoUrl: string };
 const VideoCard = ({ item, onClick, index }: { item: PortfolioItem; onClick: () => void; index: number }) => (
   <div
     onClick={onClick}
-    className="group relative aspect-video bg-card rounded-lg overflow-hidden cursor-pointer
+    className="group relative aspect-[9/16] bg-card rounded-lg overflow-hidden cursor-pointer
                border border-cyan/10 hover:border-cyan/40 transition-all duration-500
                hover:shadow-[0_0_30px_hsl(var(--cyan)/0.15)]"
     style={{ animationDelay: `${index * 80}ms` }}
