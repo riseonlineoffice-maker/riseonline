@@ -4,7 +4,7 @@ import { Play, X, Film, Clapperboard } from "lucide-react";
 const shortFormEdits = [
   { id: 1, title: "Faceless", videoUrl: "https://drive.google.com/file/d/1DkW-b8tU7FYJ8Qq4lAzPRq9SScpOQhol/preview" },
   { id: 4, title: "Client 1", videoUrl: "https://drive.google.com/file/d/1u-5LJDB-hZ2Ke-fXUFK7kiyUz--1dYCD/preview" },
-  { id: 5, title: "Minecraft", videoUrl: "https://drive.google.com/file/d/1Kbnz81XTr_Y7xAylKLzwk5sQ5d3tawQ8/preview" },
+  { id: 5, title: "Client 2", videoUrl: "https://drive.google.com/file/d/1DgKmhcpG2wplf1psJCroOfvN5iWOFQnq/preview" },
   { id: 8, title: "Speed Ramp", videoUrl: "https://drive.google.com/file/d/1X_Ti2h7FkRqEBskExY9pXCumX5Pbf4cQ/preview" },
   { id: 6, title: "Gameplay", videoUrl: "https://drive.google.com/file/d/1It4Aftr_slOCFAakT3HhvQb9KCTvwW_4/preview" },
   { id: 2, title: "Talking Head Reel", videoUrl: "https://drive.google.com/file/d/17-aJYSCub6EGb3tEHRU473mF5LxJD-04/preview" },
