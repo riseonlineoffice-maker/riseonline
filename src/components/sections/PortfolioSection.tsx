@@ -27,11 +27,6 @@ const VideoCard = ({ item, onClick, index }: { item: PortfolioItem; onClick: () 
     style={{ animationDelay: `${index * 80}ms` }}
   >
     <div className="absolute inset-0 bg-gradient-to-br from-luxury-soft/80 to-luxury-black" />
-    <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
-      <div className="w-full h-full" style={{
-        backgroundImage: `radial-gradient(circle at 30% 40%, hsl(var(--cyan) / 0.25) 0%, transparent 50%)`
-      }} />
-    </div>
 
     {/* Title bar */}
     <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-luxury-black via-luxury-black/90 to-transparent">
