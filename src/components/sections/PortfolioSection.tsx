@@ -12,7 +12,7 @@ const shortFormEdits = [
 
 const longFormEdits = [
   { id: 3, title: "YouTube Documentary", videoUrl: "https://drive.google.com/file/d/1DmskCChms7f6HdSX8nSsyGzOCC5DoAxN/preview" },
-  { id: 7, title: "Vlog", videoUrl: "https://drive.google.com/file/d/1Dum-Nba9xg4gSLB0IOyEq-rGlRQbEo9f/preview" },
+  { id: 7, title: "Faceless", videoUrl: "https://drive.google.com/file/d/1DkW-b8tU7FYJ8Qq4lAzPRq9SScpOQhol/preview" },
   { id: 9, title: "Sound Design", videoUrl: "https://drive.google.com/file/d/1n2MZE1ZXoNA0u-C4aa2WoAPq24hX_vPI/preview" },
 ];
 
