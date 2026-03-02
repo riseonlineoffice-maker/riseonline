@@ -21,16 +21,14 @@ type PortfolioItem = { id: number; title: string; videoUrl: string };
 const VideoCard = ({ item, onClick, index, aspectRatio = "9/16" }: { item: PortfolioItem; onClick: () => void; index: number; aspectRatio?: string }) => (
   <div
     onClick={onClick}
-    className="group relative bg-card rounded-lg overflow-hidden cursor-pointer border border-cyan/10 hover:border-cyan/40 transition-all duration-500 hover:shadow-[0_0_30px_hsl(var(--cyan)/0.15)]"
+    className="group relative bg-card rounded-lg overflow-hidden cursor-pointer border border-neon/10 hover:border-neon/40 transition-all duration-500 hover:shadow-[0_0_30px_hsl(var(--neon)/0.15)]"
     style={{ animationDelay: `${index * 80}ms`, aspectRatio }}
   >
     <div className="absolute inset-0 bg-gradient-to-br from-luxury-soft/80 to-luxury-black" />
 
-    {/* Title bar */}
     <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-luxury-black via-luxury-black/90 to-transparent">
       <h3 className="text-foreground font-heading text-lg tracking-wider">{item.title}</h3>
     </div>
-
   </div>
 );
 
@@ -38,37 +36,32 @@ const PortfolioSection = () => {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<"short" | "long">("short");
 
-  const allItems = [...shortFormEdits, ...longFormEdits];
-
   return (
     <section id="portfolio" className="py-24 md:py-36 bg-gradient-cinematic relative overflow-hidden">
-      {/* Ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-[0.03]"
-        style={{ background: 'radial-gradient(circle, hsl(var(--cyan)) 0%, transparent 70%)' }} />
+        style={{ background: 'radial-gradient(circle, hsl(var(--neon)) 0%, transparent 70%)' }} />
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-cyan text-xs tracking-[0.4em] uppercase font-medium mb-5 block font-body">
+          <span className="text-neon text-xs tracking-[0.4em] uppercase font-medium mb-5 block font-body">
             Portfolio
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading mb-5 leading-tight">
             <span className="text-foreground">Our </span>
-            <span className="text-gradient-cyan">Work</span>
+            <span className="text-gradient-accent">Work</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto font-body text-sm leading-relaxed">
             Scroll-stopping edits engineered for views, watch time, and conversions.
           </p>
         </div>
 
-        {/* Category Tabs */}
         <div className="flex justify-center mb-14">
-          <div className="inline-flex bg-card/50 border border-cyan/10 rounded-full p-1 backdrop-blur-sm">
+          <div className="inline-flex bg-card/50 border border-neon/10 rounded-full p-1 backdrop-blur-sm">
             <button
               onClick={() => setActiveTab("short")}
               className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-body font-medium tracking-wide uppercase transition-all duration-300
                 ${activeTab === "short"
-                  ? "bg-cyan/15 text-cyan border border-cyan/30 shadow-[0_0_15px_hsl(var(--cyan)/0.1)]"
+                  ? "bg-neon/15 text-neon border border-neon/30 shadow-[0_0_15px_hsl(var(--neon)/0.1)]"
                   : "text-muted-foreground hover:text-foreground border border-transparent"
                 }`}
             >
@@ -79,7 +72,7 @@ const PortfolioSection = () => {
               onClick={() => setActiveTab("long")}
               className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-body font-medium tracking-wide uppercase transition-all duration-300
                 ${activeTab === "long"
-                  ? "bg-cyan/15 text-cyan border border-cyan/30 shadow-[0_0_15px_hsl(var(--cyan)/0.1)]"
+                  ? "bg-neon/15 text-neon border border-neon/30 shadow-[0_0_15px_hsl(var(--neon)/0.1)]"
                   : "text-muted-foreground hover:text-foreground border border-transparent"
                 }`}
             >
@@ -89,7 +82,6 @@ const PortfolioSection = () => {
           </div>
         </div>
 
-        {/* Active Category */}
         <div className="mb-10">
           {activeTab === "short" ? (
             <>
@@ -126,26 +118,24 @@ const PortfolioSection = () => {
           )}
         </div>
 
-        {/* Disclaimer */}
         <p className="text-center text-muted-foreground/60 text-xs mt-16 max-w-xl mx-auto font-body tracking-wide">
           For confidentiality reasons, some client work is shown as samples. Full portfolio available on request.
         </p>
       </div>
 
-      {/* Video Modal */}
       {selectedVideo && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-luxury-pure/95 backdrop-blur-md animate-fade-in"
           onClick={() => setSelectedVideo(null)}
         >
           <div
-            className="relative w-full max-w-4xl mx-4 aspect-video bg-card border border-cyan/20 rounded-lg overflow-hidden animate-scale-in"
+            className="relative w-full max-w-4xl mx-4 aspect-video bg-card border border-neon/20 rounded-lg overflow-hidden animate-scale-in"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelectedVideo(null)}
               className="absolute top-3 right-3 z-10 w-9 h-9 flex items-center justify-center rounded-full
-                         bg-luxury-black/90 border border-cyan/30 text-cyan hover:bg-cyan/20 transition-colors duration-300"
+                         bg-luxury-black/90 border border-neon/30 text-neon hover:bg-neon/20 transition-colors duration-300"
             >
               <X className="w-4 h-4" />
             </button>

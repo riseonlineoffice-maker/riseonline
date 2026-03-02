@@ -22,41 +22,36 @@ const TestimonialsSection = () => {
   return (
     <section id="testimonials" className="py-24 md:py-32 bg-gradient-cinematic relative">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="text-cyan text-sm tracking-[0.3em] uppercase font-medium mb-4 block font-body">
+          <span className="text-neon text-sm tracking-[0.3em] uppercase font-medium mb-4 block font-body">
             Testimonials
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading">
             <span className="text-foreground">What Clients </span>
-            <span className="text-gradient-cyan">Say</span>
+            <span className="text-gradient-accent">Say</span>
           </h2>
         </div>
 
-        {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="p-8 bg-card border border-cyan/20 rounded-lg 
-                         hover:border-cyan/40 hover:cyan-border-glow transition-all duration-500"
+              className="p-8 bg-card border border-neon/20 rounded-lg 
+                         hover:border-neon/40 hover:neon-border-glow transition-all duration-500"
             >
-              {/* Stars */}
               <div className="flex gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-cyan fill-cyan" />
+                  <Star key={i} className="w-5 h-5 text-neon fill-neon" />
                 ))}
               </div>
 
-              {/* Content */}
               <p className="text-muted-foreground leading-relaxed mb-6 italic font-body">
                 "{testimonial.content}"
               </p>
 
-              {/* Author */}
               <div>
                 <div className="font-semibold text-foreground font-body">{testimonial.name}</div>
-                <div className="text-sm text-cyan font-body">{testimonial.role}</div>
+                <div className="text-sm text-neon font-body">{testimonial.role}</div>
               </div>
             </div>
           ))}
