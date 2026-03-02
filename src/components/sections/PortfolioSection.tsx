@@ -6,7 +6,7 @@ const shortFormEdits = [
   { id: 4, title: "Client 1", videoUrl: "https://drive.google.com/file/d/1u-5LJDB-hZ2Ke-fXUFK7kiyUz--1dYCD/preview" },
   { id: 5, title: "Client 2", videoUrl: "https://drive.google.com/file/d/1DgKmhcpG2wplf1psJCroOfvN5iWOFQnq/preview" },
   { id: 8, title: "Client 3", videoUrl: "https://drive.google.com/file/d/1DgKmhcpG2wplf1psJCroOfvN5iWOFQnq/preview" },
-  { id: 6, title: "Gameplay", videoUrl: "https://drive.google.com/file/d/1It4Aftr_slOCFAakT3HhvQb9KCTvwW_4/preview" },
+  
   { id: 2, title: "Talking Head Reel", videoUrl: "https://drive.google.com/file/d/17-aJYSCub6EGb3tEHRU473mF5LxJD-04/preview" },
 ];
 
