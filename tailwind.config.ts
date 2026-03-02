@@ -52,10 +52,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        cyan: {
-          DEFAULT: "hsl(var(--cyan))",
-          glow: "hsl(var(--cyan-glow))",
-          dim: "hsl(var(--cyan-dim))",
+        neon: {
+          DEFAULT: "hsl(var(--neon))",
+          glow: "hsl(var(--neon-glow))",
+          dim: "hsl(var(--neon-dim))",
         },
         luxury: {
           black: "hsl(var(--deep-black))",
