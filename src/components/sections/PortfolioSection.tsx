@@ -117,7 +117,7 @@ const PortfolioSection = () => {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {longFormEdits.map((item, i) => (
-                  <VideoCard key={item.id} item={item} index={i} aspectRatio="16/9" onClick={() => setSelectedVideo(item.videoUrl)} />
+                  <VideoCard key={item.id} item={item} index={i} aspectRatio="16/9" thumbnail={longFormThumb} onClick={() => setSelectedVideo(item.videoUrl)} />
                 ))}
               </div>
             </>
