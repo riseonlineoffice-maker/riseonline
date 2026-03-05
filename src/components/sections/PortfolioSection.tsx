@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Play, X, Film, Clapperboard } from "lucide-react";
+import shortFormThumb from "@/assets/short-form-thumbnail.jpeg";
 
 const shortFormEdits = [
   { id: 1, title: "Client 4", videoUrl: "https://drive.google.com/file/d/1Deo5s7uDvxm2jTYWTTky5V1_flsM8DXc/preview" },
