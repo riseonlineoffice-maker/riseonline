@@ -25,7 +25,11 @@ const VideoCard = ({ item, onClick, index, aspectRatio = "9/16" }: { item: Portf
     className="group relative bg-card rounded-lg overflow-hidden cursor-pointer border border-neon/10 hover:border-neon/40 transition-all duration-500 hover:shadow-[0_0_30px_hsl(var(--neon)/0.15)]"
     style={{ animationDelay: `${index * 80}ms`, aspectRatio }}
   >
-    <div className="absolute inset-0 bg-gradient-to-br from-luxury-soft/80 to-luxury-black" />
+    {thumbnail ? (
+      <img src={thumbnail} alt={item.title} className="absolute inset-0 w-full h-full object-cover" />
+    ) : (
+      <div className="absolute inset-0 bg-gradient-to-br from-luxury-soft/80 to-luxury-black" />
+    )}
 
     <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-luxury-black via-luxury-black/90 to-transparent">
       <h3 className="text-foreground font-heading text-lg tracking-wider">{item.title}</h3>
