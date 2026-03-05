@@ -19,7 +19,7 @@ const longFormEdits = [
 
 type PortfolioItem = { id: number; title: string; videoUrl: string };
 
-const VideoCard = ({ item, onClick, index, aspectRatio = "9/16" }: { item: PortfolioItem; onClick: () => void; index: number; aspectRatio?: string }) => (
+const VideoCard = ({ item, onClick, index, aspectRatio = "9/16", thumbnail }: { item: PortfolioItem; onClick: () => void; index: number; aspectRatio?: string; thumbnail?: string }) => (
   <div
     onClick={onClick}
     className="group relative bg-card rounded-lg overflow-hidden cursor-pointer border border-neon/10 hover:border-neon/40 transition-all duration-500 hover:shadow-[0_0_30px_hsl(var(--neon)/0.15)]"
