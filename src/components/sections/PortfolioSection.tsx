@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Play, X, Film, Clapperboard } from "lucide-react";
 import shortFormThumb from "@/assets/short-form-thumbnail.jpeg";
+import longFormThumb from "@/assets/long-form-thumbnail.jpeg";
 
 const shortFormEdits = [
   { id: 1, title: "Client 4", videoUrl: "https://drive.google.com/file/d/1Deo5s7uDvxm2jTYWTTky5V1_flsM8DXc/preview" },
@@ -116,7 +117,7 @@ const PortfolioSection = () => {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {longFormEdits.map((item, i) => (
-                  <VideoCard key={item.id} item={item} index={i} aspectRatio="16/9" onClick={() => setSelectedVideo(item.videoUrl)} />
+                  <VideoCard key={item.id} item={item} index={i} aspectRatio="16/9" thumbnail={longFormThumb} onClick={() => setSelectedVideo(item.videoUrl)} />
                 ))}
               </div>
             </>
