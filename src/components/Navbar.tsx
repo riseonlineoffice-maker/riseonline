@@ -37,8 +37,9 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <a href="#" className="text-xl font-heading text-gradient-accent tracking-wider">
-            Rise Online
+          <a href="#" className="flex items-center gap-3">
+            <img src={logo} alt="Rise Online" className="w-10 h-10 rounded-full object-cover border-2 border-neon/30 shadow-[0_0_12px_hsl(var(--neon)/0.2)]" />
+            <span className="text-xl font-heading text-gradient-accent tracking-wider">Rise Online</span>
           </a>
 
           <div className="hidden md:flex items-center gap-8">
