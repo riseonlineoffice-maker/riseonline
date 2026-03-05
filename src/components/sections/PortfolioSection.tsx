@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Play, X, Film, Clapperboard } from "lucide-react";
+import shortFormThumb from "@/assets/short-form-thumbnail.jpeg";
 
 const shortFormEdits = [
   { id: 1, title: "Client 4", videoUrl: "https://drive.google.com/file/d/1Deo5s7uDvxm2jTYWTTky5V1_flsM8DXc/preview" },
@@ -18,13 +19,17 @@ const longFormEdits = [
 
 type PortfolioItem = { id: number; title: string; videoUrl: string };
 
-const VideoCard = ({ item, onClick, index, aspectRatio = "9/16" }: { item: PortfolioItem; onClick: () => void; index: number; aspectRatio?: string }) => (
+const VideoCard = ({ item, onClick, index, aspectRatio = "9/16", thumbnail }: { item: PortfolioItem; onClick: () => void; index: number; aspectRatio?: string; thumbnail?: string }) => (
   <div
     onClick={onClick}
     className="group relative bg-card rounded-lg overflow-hidden cursor-pointer border border-neon/10 hover:border-neon/40 transition-all duration-500 hover:shadow-[0_0_30px_hsl(var(--neon)/0.15)]"
     style={{ animationDelay: `${index * 80}ms`, aspectRatio }}
   >
-    <div className="absolute inset-0 bg-gradient-to-br from-luxury-soft/80 to-luxury-black" />
+    {thumbnail ? (
+      <img src={thumbnail} alt={item.title} className="absolute inset-0 w-full h-full object-cover" />
+    ) : (
+      <div className="absolute inset-0 bg-gradient-to-br from-luxury-soft/80 to-luxury-black" />
+    )}
 
     <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-luxury-black via-luxury-black/90 to-transparent">
       <h3 className="text-foreground font-heading text-lg tracking-wider">{item.title}</h3>
@@ -95,7 +100,7 @@ const PortfolioSection = () => {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {shortFormEdits.map((item, i) => (
-                  <VideoCard key={item.id} item={item} index={i} onClick={() => setSelectedVideo(item.videoUrl)} />
+                  <VideoCard key={item.id} item={item} index={i} thumbnail={shortFormThumb} onClick={() => setSelectedVideo(item.videoUrl)} />
                 ))}
               </div>
             </>
