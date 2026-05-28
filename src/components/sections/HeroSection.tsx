@@ -9,7 +9,7 @@ const HeroSection = () => {
   };
 
   const openWhatsApp = () => {
-    window.open("https://wa.me/918188938018", "_blank");
+    window.open("https://wa.me/918188938018?text=Hi%20Rise%20Online%2C%20I%20want%20to%20know%20more%20about%20your%20services.", "_blank");
   };
 
   return (
