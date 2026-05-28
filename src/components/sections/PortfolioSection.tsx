@@ -39,7 +39,7 @@ const VideoCard = ({ item, onClick, index, aspectRatio = "9/16", thumbnail }: { 
 );
 
 const PortfolioSection = () => {
-  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [selectedVideo, setSelectedVideo] = useState<{ url: string; aspect: "video" | "short" } | null>(null);
   const [activeTab, setActiveTab] = useState<"short" | "long">("short");
 
   return (
@@ -101,7 +101,7 @@ const PortfolioSection = () => {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {shortFormEdits.map((item, i) => (
-                  <VideoCard key={item.id} item={item} index={i} thumbnail={shortFormThumb} onClick={() => setSelectedVideo(item.videoUrl)} />
+                  <VideoCard key={item.id} item={item} index={i} thumbnail={shortFormThumb} onClick={() => setSelectedVideo({ url: item.videoUrl, aspect: "short" })} />
                 ))}
               </div>
             </>
@@ -117,7 +117,7 @@ const PortfolioSection = () => {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {longFormEdits.map((item, i) => (
-                  <VideoCard key={item.id} item={item} index={i} aspectRatio="16/9" thumbnail={longFormThumb} onClick={() => setSelectedVideo(item.videoUrl)} />
+                  <VideoCard key={item.id} item={item} index={i} aspectRatio="16/9" thumbnail={longFormThumb} onClick={() => setSelectedVideo({ url: item.videoUrl, aspect: "video" })} />
                 ))}
               </div>
             </>
@@ -135,7 +135,11 @@ const PortfolioSection = () => {
           onClick={() => setSelectedVideo(null)}
         >
           <div
-            className="relative w-full max-w-4xl mx-4 aspect-video bg-card border border-neon/20 rounded-lg overflow-hidden animate-scale-in"
+            className={`relative mx-4 bg-card border border-neon/20 rounded-lg overflow-hidden animate-scale-in ${
+              selectedVideo.aspect === "short"
+                ? "h-[90vh] max-h-[90vh] aspect-[9/16]"
+                : "w-full max-w-4xl aspect-video"
+            }`}
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -146,7 +150,7 @@ const PortfolioSection = () => {
               <X className="w-4 h-4" />
             </button>
             <iframe
-              src={selectedVideo}
+              src={selectedVideo.url}
               className="absolute inset-0 w-full h-full"
               allow="autoplay; encrypted-media"
               allowFullScreen
