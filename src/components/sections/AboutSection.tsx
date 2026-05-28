@@ -36,7 +36,7 @@ const AboutSection = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
             {[
-              { number: "50+", label: "Projects Delivered" },
+              { number: "10+", label: "Projects Delivered" },
               { number: "100%", label: "Client Satisfaction" },
               { number: "24hr", label: "Response Time" },
               { number: "Premium", label: "Quality Standard" },
