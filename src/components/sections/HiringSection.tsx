@@ -45,7 +45,7 @@ const HiringSection = () => {
           <Button
             variant="cyan"
             size="xl"
-            onClick={() => window.open("https://forms.gle/5uJmS2oPujzpHx3G8", "_blank")}
+            onClick={() => window.open("https://forms.gle/KZVY8G2V8S77Uhdj9", "_blank")}
             className="group"
           >
             <Users className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
