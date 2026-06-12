@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Play, X, Film, Clapperboard } from "lucide-react";
 import shortFormThumb from "@/assets/short-form-thumbnail.jpeg";
 import longFormThumb from "@/assets/long-form-thumbnail.jpeg";
 
 const shortFormEdits = [
-  { id: 1, title: "Client 4", videoUrl: "https://drive.google.com/file/d/1Deo5s7uDvxm2jTYWTTky5V1_flsM8DXc/preview" },
+  { id: 1, title: "Client 4", videoUrl: "https://drive.google.com/file/d/1Deo5s7uDvxm2jTYWTTky5V1_flsM8DXc/preview", mp4Url: "https://res.cloudinary.com/dxtzazulx/video/upload/v1781283808/Client_Work_auehgy.mp4" },
   { id: 4, title: "Client 1", videoUrl: "https://drive.google.com/file/d/1kqDr_xCtNNhft_qgNqyQvvdpnU7_-JbJ/preview" },
   { id: 5, title: "Client 2", videoUrl: "https://drive.google.com/file/d/1DgKmhcpG2wplf1psJCroOfvN5iWOFQnq/preview" },
   { id: 8, title: "Client 3", videoUrl: "https://drive.google.com/file/d/1xco646I_bdziWN0Rx8SvUCYTM8Q8aZF8/preview" },
@@ -18,25 +18,67 @@ const longFormEdits = [
   { id: 9, title: "Sound Design", videoUrl: "https://drive.google.com/file/d/1n2MZE1ZXoNA0u-C4aa2WoAPq24hX_vPI/preview" },
 ];
 
-type PortfolioItem = { id: number; title: string; videoUrl: string };
+type PortfolioItem = { id: number; title: string; videoUrl: string; mp4Url?: string };
 
-const VideoCard = ({ item, onClick, index, aspectRatio = "9/16", thumbnail }: { item: PortfolioItem; onClick: () => void; index: number; aspectRatio?: string; thumbnail?: string }) => (
-  <div
-    onClick={onClick}
-    className="group relative bg-card rounded-lg overflow-hidden cursor-pointer border border-neon/10 hover:border-neon/40 transition-all duration-500 hover:shadow-[0_0_30px_hsl(var(--neon)/0.15)]"
-    style={{ animationDelay: `${index * 80}ms`, aspectRatio }}
-  >
-    {thumbnail ? (
-      <img src={thumbnail} alt={item.title} className="absolute inset-0 w-full h-full object-cover" />
-    ) : (
-      <div className="absolute inset-0 bg-gradient-to-br from-luxury-soft/80 to-luxury-black" />
-    )}
+const VideoCard = ({ item, onClick, index, aspectRatio = "9/16", thumbnail }: { item: PortfolioItem; onClick: () => void; index: number; aspectRatio?: string; thumbnail?: string }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [videoFailed, setVideoFailed] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
 
-    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-luxury-black via-luxury-black/90 to-transparent">
-      <h3 className="text-foreground font-heading text-lg tracking-wider">{item.title}</h3>
+  useEffect(() => {
+    if (!item.mp4Url || videoFailed) return;
+    const el = containerRef.current;
+    const vid = videoRef.current;
+    if (!el || !vid) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            vid.play().catch(() => {});
+          } else {
+            vid.pause();
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [item.mp4Url, videoFailed]);
+
+  return (
+    <div
+      ref={containerRef}
+      onClick={onClick}
+      className="group relative bg-card rounded-lg overflow-hidden cursor-pointer border border-neon/10 hover:border-neon/40 transition-all duration-500 hover:shadow-[0_0_30px_hsl(var(--neon)/0.15)]"
+      style={{ animationDelay: `${index * 80}ms`, aspectRatio }}
+    >
+      {thumbnail && (
+        <img src={thumbnail} alt={item.title} className="absolute inset-0 w-full h-full object-cover" />
+      )}
+
+      {item.mp4Url && !videoFailed && (
+        <video
+          ref={videoRef}
+          src={item.mp4Url}
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          onCanPlay={() => setVideoReady(true)}
+          onError={() => setVideoFailed(true)}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"}`}
+        />
+      )}
+
+      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-luxury-black via-luxury-black/90 to-transparent z-10">
+        <h3 className="text-foreground font-heading text-lg tracking-wider">{item.title}</h3>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const PortfolioSection = () => {
   const [selectedVideo, setSelectedVideo] = useState<{ url: string; aspect: "video" | "short" } | null>(null);
