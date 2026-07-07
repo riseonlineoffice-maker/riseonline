@@ -75,7 +75,6 @@ const VideoCard = ({ item, onClick, index, aspectRatio = "9/16", thumbnail }: { 
 
 const PortfolioSection = () => {
   const [selectedVideo, setSelectedVideo] = useState<{ url: string; aspect: "video" | "short" } | null>(null);
-  const [activeTab, setActiveTab] = useState<"short" | "long">("short");
 
   return (
     <section id="portfolio" className="py-24 md:py-36 bg-gradient-cinematic relative overflow-hidden">
