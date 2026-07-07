@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import { Play, X, Film, Clapperboard } from "lucide-react";
+import { X, Film } from "lucide-react";
 import shortFormThumb from "@/assets/short-form-thumbnail.jpeg";
-import longFormThumb from "@/assets/long-form-thumbnail.jpeg";
 
 const shortFormEdits = [
   { id: 1, title: "Client 4", videoUrl: "https://drive.google.com/file/d/1Deo5s7uDvxm2jTYWTTky5V1_flsM8DXc/preview", mp4Url: "https://res.cloudinary.com/dxtzazulx/video/upload/v1781284008/VID-20250907-WA0000_kbdyao.mp4" },
@@ -10,12 +9,6 @@ const shortFormEdits = [
   { id: 8, title: "Client 3", videoUrl: "https://drive.google.com/file/d/1xco646I_bdziWN0Rx8SvUCYTM8Q8aZF8/preview", mp4Url: "https://res.cloudinary.com/dxtzazulx/video/upload/v1783438925/FINAL_VIDEO_REVISION_-_Trim_f3qkus.mp4" },
   
   { id: 2, title: "Talking Head Reel", videoUrl: "https://drive.google.com/file/d/17-aJYSCub6EGb3tEHRU473mF5LxJD-04/preview", mp4Url: "https://res.cloudinary.com/dxtzazulx/video/upload/v1781283808/Client_Work_auehgy.mp4" },
-];
-
-const longFormEdits = [
-  { id: 3, title: "YouTube Documentary", videoUrl: "https://drive.google.com/file/d/1DmskCChms7f6HdSX8nSsyGzOCC5DoAxN/preview" },
-  { id: 7, title: "Faceless", videoUrl: "https://drive.google.com/file/d/1DkW-b8tU7FYJ8Qq4lAzPRq9SScpOQhol/preview" },
-  { id: 9, title: "Sound Design", videoUrl: "https://drive.google.com/file/d/1n2MZE1ZXoNA0u-C4aa2WoAPq24hX_vPI/preview" },
 ];
 
 type PortfolioItem = { id: number; title: string; videoUrl: string; mp4Url?: string };
