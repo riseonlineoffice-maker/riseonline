@@ -95,67 +95,20 @@ const PortfolioSection = () => {
           </p>
         </div>
 
-        <div className="flex justify-center mb-14">
-          <div className="inline-flex bg-card/50 border border-neon/10 rounded-full p-1 backdrop-blur-sm">
-            <button
-              onClick={() => setActiveTab("short")}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-body font-medium tracking-wide uppercase transition-all duration-300
-                ${activeTab === "short"
-                  ? "bg-neon/15 text-neon border border-neon/30 shadow-[0_0_15px_hsl(var(--neon)/0.1)]"
-                  : "text-muted-foreground hover:text-foreground border border-transparent"
-                }`}
-            >
-              <Film className="w-4 h-4" />
-              Short Form
-            </button>
-            <button
-              onClick={() => setActiveTab("long")}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-body font-medium tracking-wide uppercase transition-all duration-300
-                ${activeTab === "long"
-                  ? "bg-neon/15 text-neon border border-neon/30 shadow-[0_0_15px_hsl(var(--neon)/0.1)]"
-                  : "text-muted-foreground hover:text-foreground border border-transparent"
-                }`}
-            >
-              <Clapperboard className="w-4 h-4" />
-              Long Form
-            </button>
-          </div>
-        </div>
-
         <div className="mb-10">
-          {activeTab === "short" ? (
-            <>
-              <div className="text-center mb-10">
-                <h3 className="text-2xl md:text-3xl font-heading text-foreground tracking-wider mb-3">
-                  Short Form Edits
-                </h3>
-                <p className="text-muted-foreground font-body text-sm max-w-lg mx-auto leading-relaxed">
-                  For creators, brands & businesses who need viral reels, YouTube shorts, gaming highlights, and scroll-stopping content that drives engagement.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                {shortFormEdits.map((item, i) => (
-                  <VideoCard key={item.id} item={item} index={i} thumbnail={shortFormThumb} onClick={() => setSelectedVideo({ url: item.videoUrl, aspect: "short" })} />
-                ))}
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="text-center mb-10">
-                <h3 className="text-2xl md:text-3xl font-heading text-foreground tracking-wider mb-3">
-                  Long Form Edits
-                </h3>
-                <p className="text-muted-foreground font-body text-sm max-w-lg mx-auto leading-relaxed">
-                  For YouTubers, podcasters & filmmakers who need cinematic documentaries, polished vlogs, and premium long-form content that retains viewers.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                {longFormEdits.map((item, i) => (
-                  <VideoCard key={item.id} item={item} index={i} aspectRatio="16/9" thumbnail={longFormThumb} onClick={() => setSelectedVideo({ url: item.videoUrl, aspect: "video" })} />
-                ))}
-              </div>
-            </>
-          )}
+          <div className="text-center mb-10">
+            <h3 className="text-2xl md:text-3xl font-heading text-foreground tracking-wider mb-3">
+              Short Form Edits
+            </h3>
+            <p className="text-muted-foreground font-body text-sm max-w-lg mx-auto leading-relaxed">
+              For creators, brands & businesses who need viral reels, YouTube shorts, gaming highlights, and scroll-stopping content that drives engagement.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {shortFormEdits.map((item, i) => (
+              <VideoCard key={item.id} item={item} index={i} thumbnail={shortFormThumb} onClick={() => setSelectedVideo({ url: item.videoUrl, aspect: "short" })} />
+            ))}
+          </div>
         </div>
 
         <p className="text-center text-muted-foreground/60 text-xs mt-16 max-w-xl mx-auto font-body tracking-wide">
