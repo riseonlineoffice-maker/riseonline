@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { X, Film } from "lucide-react";
+import { X } from "lucide-react";
 import shortFormThumb from "@/assets/short-form-thumbnail.jpeg";
 
 const shortFormEdits = [
