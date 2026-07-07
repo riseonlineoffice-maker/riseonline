@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import { Play, X, Film, Clapperboard } from "lucide-react";
+import { X } from "lucide-react";
 import shortFormThumb from "@/assets/short-form-thumbnail.jpeg";
-import longFormThumb from "@/assets/long-form-thumbnail.jpeg";
 
 const shortFormEdits = [
   { id: 1, title: "Client 4", videoUrl: "https://drive.google.com/file/d/1Deo5s7uDvxm2jTYWTTky5V1_flsM8DXc/preview", mp4Url: "https://res.cloudinary.com/dxtzazulx/video/upload/v1781284008/VID-20250907-WA0000_kbdyao.mp4" },
@@ -10,12 +9,6 @@ const shortFormEdits = [
   { id: 8, title: "Client 3", videoUrl: "https://drive.google.com/file/d/1xco646I_bdziWN0Rx8SvUCYTM8Q8aZF8/preview", mp4Url: "https://res.cloudinary.com/dxtzazulx/video/upload/v1783438925/FINAL_VIDEO_REVISION_-_Trim_f3qkus.mp4" },
   
   { id: 2, title: "Talking Head Reel", videoUrl: "https://drive.google.com/file/d/17-aJYSCub6EGb3tEHRU473mF5LxJD-04/preview", mp4Url: "https://res.cloudinary.com/dxtzazulx/video/upload/v1781283808/Client_Work_auehgy.mp4" },
-];
-
-const longFormEdits = [
-  { id: 3, title: "YouTube Documentary", videoUrl: "https://drive.google.com/file/d/1DmskCChms7f6HdSX8nSsyGzOCC5DoAxN/preview" },
-  { id: 7, title: "Faceless", videoUrl: "https://drive.google.com/file/d/1DkW-b8tU7FYJ8Qq4lAzPRq9SScpOQhol/preview" },
-  { id: 9, title: "Sound Design", videoUrl: "https://drive.google.com/file/d/1n2MZE1ZXoNA0u-C4aa2WoAPq24hX_vPI/preview" },
 ];
 
 type PortfolioItem = { id: number; title: string; videoUrl: string; mp4Url?: string };
@@ -82,7 +75,6 @@ const VideoCard = ({ item, onClick, index, aspectRatio = "9/16", thumbnail }: { 
 
 const PortfolioSection = () => {
   const [selectedVideo, setSelectedVideo] = useState<{ url: string; aspect: "video" | "short" } | null>(null);
-  const [activeTab, setActiveTab] = useState<"short" | "long">("short");
 
   return (
     <section id="portfolio" className="py-24 md:py-36 bg-gradient-cinematic relative overflow-hidden">
@@ -103,67 +95,20 @@ const PortfolioSection = () => {
           </p>
         </div>
 
-        <div className="flex justify-center mb-14">
-          <div className="inline-flex bg-card/50 border border-neon/10 rounded-full p-1 backdrop-blur-sm">
-            <button
-              onClick={() => setActiveTab("short")}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-body font-medium tracking-wide uppercase transition-all duration-300
-                ${activeTab === "short"
-                  ? "bg-neon/15 text-neon border border-neon/30 shadow-[0_0_15px_hsl(var(--neon)/0.1)]"
-                  : "text-muted-foreground hover:text-foreground border border-transparent"
-                }`}
-            >
-              <Film className="w-4 h-4" />
-              Short Form
-            </button>
-            <button
-              onClick={() => setActiveTab("long")}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-body font-medium tracking-wide uppercase transition-all duration-300
-                ${activeTab === "long"
-                  ? "bg-neon/15 text-neon border border-neon/30 shadow-[0_0_15px_hsl(var(--neon)/0.1)]"
-                  : "text-muted-foreground hover:text-foreground border border-transparent"
-                }`}
-            >
-              <Clapperboard className="w-4 h-4" />
-              Long Form
-            </button>
-          </div>
-        </div>
-
         <div className="mb-10">
-          {activeTab === "short" ? (
-            <>
-              <div className="text-center mb-10">
-                <h3 className="text-2xl md:text-3xl font-heading text-foreground tracking-wider mb-3">
-                  Short Form Edits
-                </h3>
-                <p className="text-muted-foreground font-body text-sm max-w-lg mx-auto leading-relaxed">
-                  For creators, brands & businesses who need viral reels, YouTube shorts, gaming highlights, and scroll-stopping content that drives engagement.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                {shortFormEdits.map((item, i) => (
-                  <VideoCard key={item.id} item={item} index={i} thumbnail={shortFormThumb} onClick={() => setSelectedVideo({ url: item.videoUrl, aspect: "short" })} />
-                ))}
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="text-center mb-10">
-                <h3 className="text-2xl md:text-3xl font-heading text-foreground tracking-wider mb-3">
-                  Long Form Edits
-                </h3>
-                <p className="text-muted-foreground font-body text-sm max-w-lg mx-auto leading-relaxed">
-                  For YouTubers, podcasters & filmmakers who need cinematic documentaries, polished vlogs, and premium long-form content that retains viewers.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                {longFormEdits.map((item, i) => (
-                  <VideoCard key={item.id} item={item} index={i} aspectRatio="16/9" thumbnail={longFormThumb} onClick={() => setSelectedVideo({ url: item.videoUrl, aspect: "video" })} />
-                ))}
-              </div>
-            </>
-          )}
+          <div className="text-center mb-10">
+            <h3 className="text-2xl md:text-3xl font-heading text-foreground tracking-wider mb-3">
+              Short Form Edits
+            </h3>
+            <p className="text-muted-foreground font-body text-sm max-w-lg mx-auto leading-relaxed">
+              For creators, brands & businesses who need viral reels, YouTube shorts, gaming highlights, and scroll-stopping content that drives engagement.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {shortFormEdits.map((item, i) => (
+              <VideoCard key={item.id} item={item} index={i} thumbnail={shortFormThumb} onClick={() => setSelectedVideo({ url: item.videoUrl, aspect: "short" })} />
+            ))}
+          </div>
         </div>
 
         <p className="text-center text-muted-foreground/60 text-xs mt-16 max-w-xl mx-auto font-body tracking-wide">
