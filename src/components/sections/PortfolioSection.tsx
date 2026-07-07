@@ -7,7 +7,7 @@ const shortFormEdits = [
   { id: 1, title: "Client 4", videoUrl: "https://drive.google.com/file/d/1Deo5s7uDvxm2jTYWTTky5V1_flsM8DXc/preview", mp4Url: "https://res.cloudinary.com/dxtzazulx/video/upload/v1781284008/VID-20250907-WA0000_kbdyao.mp4" },
   { id: 4, title: "Client 1", videoUrl: "https://drive.google.com/file/d/1kqDr_xCtNNhft_qgNqyQvvdpnU7_-JbJ/preview", mp4Url: "https://res.cloudinary.com/dxtzazulx/video/upload/v1783438568/DEMO_kadyzw.mp4" },
   { id: 5, title: "Client 2", videoUrl: "https://drive.google.com/file/d/1DgKmhcpG2wplf1psJCroOfvN5iWOFQnq/preview", mp4Url: "https://res.cloudinary.com/dxtzazulx/video/upload/v1781283967/VID-20250907-WA0001_seq3vg.mp4" },
-  { id: 8, title: "Client 3", videoUrl: "https://drive.google.com/file/d/1xco646I_bdziWN0Rx8SvUCYTM8Q8aZF8/preview" },
+  { id: 8, title: "Client 3", videoUrl: "https://drive.google.com/file/d/1xco646I_bdziWN0Rx8SvUCYTM8Q8aZF8/preview", mp4Url: "https://res.cloudinary.com/dxtzazulx/video/upload/v1783438925/FINAL_VIDEO_REVISION_-_Trim_f3qkus.mp4" },
   
   { id: 2, title: "Talking Head Reel", videoUrl: "https://drive.google.com/file/d/17-aJYSCub6EGb3tEHRU473mF5LxJD-04/preview", mp4Url: "https://res.cloudinary.com/dxtzazulx/video/upload/v1781283808/Client_Work_auehgy.mp4" },
 ];
